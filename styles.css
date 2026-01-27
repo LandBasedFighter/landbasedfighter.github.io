@@ -58,7 +58,7 @@ body {
 }
 
 .siteheader-logo {
-    height: 150px;
+    height: 80px;
     width: auto;
     margin: 10px;
 }
@@ -206,46 +206,48 @@ body {
 
 .train-map-container {
     display: flex;
-    background-color: var(--marta-grey);
-    height: 400px;
-    flex-direction: row;
-}
-
-.side-stuff {
-    display: flex;
-    order: 1;
-    gap: 3px;
-}
-
-.red-line {
-    background-color: var(--red-line);
-    height: fill;
-    width: 20px;
-}
-
-.yellow-line {
-    background-color: var(--gold-line);
-    height: fill;
-    width: 20px;
-}
-
-.train-map-circle {
-    width :40px;
-    height : 40px;
-    border-radius :50%;
-    border: solid 6px var(--marta-black);
-    outline: solid 2px var(--marta-grey);
-
-}
-
-.train-map-card-box {
+    background: white;
+    height: auto;
     flex-direction: column;
-    height: fill;
-    width: fill;
-    order: 2;
-    background-color: var(--green-line);
-
+    padding: 30px;
+    padding-left: 30px;
+    gap: 20px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    border-left: 4px solid var(--marta-blue);
 }
+
+
+
+.train-card {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.station-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+}
+
+.station-logo {
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+}
+
+.station-text {
+    flex: 1;
+}
+
 
 @keyframes slideInLeft {
     from {
@@ -272,10 +274,6 @@ body {
     .hero-text {
         order: 1;
         padding: 30px 20px;
-    }
-
-    .hero-text h1 {
-        font-size: 2rem;
     }
 
     .hero-text h2 {
