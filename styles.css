@@ -2,13 +2,23 @@
     --marta-blue: #0092d0;
     --marta-yellow: #fdbe43;
     --marta-orange: #ff7500;
-    --red-line: #ea0213;
-    --green-line: #00b05a;
-    --gold-line: #ddb312;
-    --blue-line: #0180c0;
-    --marta-black: #000000;
-    --marta-grey: #cccccc;
     scroll-behavior: smooth;
+    
+    /* Light mode colors */
+    --bg-primary: #ffffff;
+    --bg-secondary: #f2f2f2;
+    --text-primary: #000000;
+    --text-secondary: #555555;
+    --text-muted: #999999;
+}
+
+html.dark-mode {
+    /* Dark mode colors - warm palette matching light mode aesthetic */
+    --bg-primary: #2a2420;
+    --bg-secondary: #3a3430;
+    --text-primary: #f5f1eb;
+    --text-secondary: #d0ccc8;
+    --text-muted: #a89f98;
 }
 
 * {
@@ -19,8 +29,10 @@
 
 body {
     font-family: Helvetica, Arial, sans-serif;
-    color: var(--marta-black);
+    color: var(--text-primary);
     font-size: large;
+    background-color: var(--bg-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 section {
@@ -35,7 +47,7 @@ section.visible {
 .top-bar-container {
     width: 100%;
     height: 100px;
-    background-color: #f2f2f2;
+    background-color: var(--bg-secondary);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -69,20 +81,28 @@ section.visible {
 }
 
 .siteheader-logo {
-    height: 165px;
+    height: 140px;
     width: auto;
     margin: 10px;
+}
+
+.header-logo {
+    content: url('assets/Header SVG Light.svg');
+}
+
+html.dark-mode .header-logo {
+    content: url('assets/Header PNG Dark.png');
 }
 
 .top-bar-links {
     list-style-type: none;
     font-size: large;
-    background-color: #f2f2f2;
+    background-color: var(--bg-secondary);
     display: flex;
 }
 
 .top-bar-links li a {
-    color: #000;
+    color: var(--text-primary);
     font-weight: bold;
     text-decoration: none;
     padding: 15px 30px;
@@ -97,6 +117,59 @@ section.visible {
     color: white;
 }
 
+.toggle-switch {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 15px;
+    cursor: pointer;
+    gap: 8px;
+}
+
+.toggle-icon {
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+}
+
+.toggle-switch input {
+    display: none;
+}
+
+.slider {
+    width: 50px;
+    height: 28px;
+    background-color: #ccc;
+    border-radius: 34px;
+    position: relative;
+    transition: background-color 0.3s ease;
+    border: 2px solid #999;
+}
+
+.slider::before {
+    content: "";
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: white;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.toggle-switch input:checked + .slider {
+    background-color: var(--marta-blue);
+    border-color: var(--marta-blue);
+}
+
+.toggle-switch input:checked + .slider::before {
+    transform: translateX(22px);
+}
+
 .train-hero {
     display: flex;
     flex-direction: row;
@@ -108,6 +181,10 @@ section.visible {
     background: linear-gradient(135deg, #efece6 0%, #f5f1eb 100%);
 }
 
+html.dark-mode .train-hero {
+    background: linear-gradient(135deg, #3a3430 0%, #2a2420 100%);
+}
+
 .hero-text {
     order: 2;
     flex: 1;
@@ -116,7 +193,7 @@ section.visible {
     justify-content: center;
     padding-left: 10%;
     padding-right: 5%;
-}
+}text-primary
 
 .hero-text h2 {
     font-size: 1.5rem;
@@ -129,7 +206,7 @@ section.visible {
 
 .hero-text h3 {
     font-size: 1rem;
-    color: #555;
+    color: var(--text-secondary);
     font-weight: 400;
     line-height: 1.6;
     animation: slideInLeft 0.8s ease-out 0.4s both;
@@ -168,11 +245,20 @@ section.visible {
     z-index: 0;
 }
 
+html.dark-mode .hero-image::before {
+    background: var(--marta-blue);
+    opacity: 0.2;
+}
+
 .hero-image img {
     width: 100%;
     height: auto;
     max-width: 400px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), inset 0 0 0 2px var(--marta-blue);
+ 
+
+html.dark-mode .hero-image img {
+    border: 8px solid #2d2d2d;
+}   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), inset 0 0 0 2px var(--marta-blue);
     transition: transform 0.4s ease, filter 0.4s ease;
     border-radius: 8px;
     border: 8px solid #f5f1eb;
@@ -185,14 +271,14 @@ section.visible {
 
 .info-section {
     padding: 3%;
-    background-color: #ffffff;
+    background-color: var(--bg-primary);
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .info-section h2 {
     font-size: 2.5rem;
-    color: var(--marta-black);
+    color: var(--text-primary);
     font-weight: 700;
     margin-bottom: 30px;
     position: relative;
@@ -227,7 +313,7 @@ section.visible {
 }
 
 .project-card {
-    background-color: white;
+    background-color: var(--bg-secondary);
     border-radius: 8px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     overflow: hidden;
@@ -258,7 +344,7 @@ section.visible {
 }
 
 .project-card h3 {
-    color: var(--marta-black);
+    color: var(--text-primary);
     font-size: 1.3rem;
     font-weight: 600;
     margin: 20px;
@@ -266,7 +352,7 @@ section.visible {
 }
 
 .project-card p {
-    color: #666;
+    color: var(--text-secondary);
     font-size: 0.95rem;
     line-height: 1.5;
     margin: 0 20px 20px;
@@ -274,7 +360,7 @@ section.visible {
 
 .train-map-container {
     display: flex;
-    background: white;
+    background: var(--bg-primary);
     height: auto;
     flex-direction: column;
     padding: 30px;
@@ -288,7 +374,7 @@ section.visible {
 
 
 .train-card {
-    background-color: white;
+    background-color: var(--bg-secondary);
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
@@ -296,7 +382,8 @@ section.visible {
     text-align: left;
     display: flex;
     align-items: center;
-    gap: 30px;    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    gap: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .train-card:hover {
@@ -314,6 +401,14 @@ section.visible {
     width: 60px;
     height: auto;
     flex-shrink: 0;
+}
+
+.dekalb-logo {
+    content: url('assets/logos/dekalb-schools-light.png');
+}
+
+html.dark-mode .dekalb-logo {
+    content: url('assets/logos/dekalb-schools-dark.png');
 }
 
 .station-text {
