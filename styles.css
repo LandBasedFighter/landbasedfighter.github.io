@@ -4,7 +4,7 @@
     --marta-orange: #ff7500;
     scroll-behavior: smooth;
     
-    /* Light mode colors */
+    /* light mode colors */
     --bg-primary: #ffffff;
     --bg-secondary: #f2f2f2;
     --text-primary: #000000;
@@ -13,7 +13,7 @@
 }
 
 html.dark-mode {
-    /* Dark mode colors - warm palette matching light mode aesthetic */
+    /* dark mode colors */
     --bg-primary: #2a2420;
     --bg-secondary: #3a3430;
     --text-primary: #f5f1eb;
@@ -127,10 +127,25 @@ html.dark-mode .header-logo {
 }
 
 .toggle-icon {
-    font-size: 1.2rem;
     display: flex;
     align-items: center;
+    position: relative;
+    width: 24px;
+    height: 24px;
+    justify-content: center;
+    color: var(--text-primary);
 }
+
+.dark-icon::before {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    box-shadow: inset -4px 3px currentColor;
+    transition: all 0.3s ease;
+}
+
 
 .toggle-switch input {
     display: none;
