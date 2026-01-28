@@ -302,6 +302,7 @@ html.dark-mode .hero-image img {
 
 #about h2::after,
 #some-more h2::after,
+#blog-peek h2::after,
 #projects h2::after {
     content: "";
     display: block;
@@ -317,6 +318,64 @@ html.dark-mode .hero-image img {
 #some-more h2::after {
     background: var(--marta-blue);
 }
+
+#blog-peek h2::after {
+    background: #ea0213;
+}
+
+.latest-posts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    border-left: 4px solid #ea0213;
+    padding-left: 30px;
+}
+
+.blog-post-card {
+    background-color: var(--bg-secondary);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+.blog-post-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.blog-post-card h3 {
+    color: var(--text-primary);
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.blog-post-card p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.blog-post-card a {
+    color: var(--marta-blue);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.view-all-container {
+    margin-top: 20px;
+    padding-left: 34px;
+}
+
 
 #projects h2::after {
     background: var(--marta-yellow);
