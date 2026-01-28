@@ -181,6 +181,7 @@ html.dark-mode .header-logo {
     background: linear-gradient(135deg, #efece6 0%, #f5f1eb 100%);
 }
 
+
 html.dark-mode .train-hero {
     background: linear-gradient(135deg, #3a3430 0%, #2a2420 100%);
 }
@@ -310,6 +311,8 @@ html.dark-mode .hero-image img {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    border-left: 4px solid var(--marta-yellow);
+    padding-left: 30px;
 }
 
 .project-card {

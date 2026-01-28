@@ -1,20 +1,33 @@
 // Dark mode toggle
 const darkModeToggle = document.getElementById('dark-mode-toggle');
 const html = document.documentElement;
+const siteHeaderLogo = document.querySelector('.siteheader-logo');
 
-// Check for saved dark mode preference or system preference
+const lightLogoSrc = 'assets/Header SVG Light.svg';
+const darkLogoSrc = 'assets/Header PNG Dark.png'; //canva subscription ran out lol 
+
+function applyTheme(isDark) {
+    html.classList.toggle('dark-mode', isDark);
+    darkModeToggle.checked = isDark;
+    if (siteHeaderLogo) {
+        siteHeaderLogo.src = isDark ? darkLogoSrc : lightLogoSrc;
+    }
+}
+
+// check for saved dark mode preference or system preference
 const savedDarkMode = localStorage.getItem('darkMode');
 const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-if (savedDarkMode === 'true' || (savedDarkMode === null && prefersDarkMode)) {
-    html.classList.add('dark-mode');
-    darkModeToggle.checked = true;
+if (savedDarkMode !== null) {
+    applyTheme(savedDarkMode === 'true');
+} else {
+    applyTheme(prefersDarkMode);
 }
 
 darkModeToggle.addEventListener('change', () => {
-    html.classList.toggle('dark-mode');
-    const isDarkMode = html.classList.contains('dark-mode');
+    const isDarkMode = darkModeToggle.checked;
     localStorage.setItem('darkMode', isDarkMode);
+    applyTheme(isDarkMode);
 });
 
 // Listen for system preference changes
@@ -22,13 +35,7 @@ const darkModeQuery = window.matchMedia('(prefers-color-scheme: dark)');
 darkModeQuery.addEventListener('change', (e) => {
     // Only apply system preference if user hasn't manually set a preference
     if (localStorage.getItem('darkMode') === null) {
-        if (e.matches) {
-            html.classList.add('dark-mode');
-            darkModeToggle.checked = true;
-        } else {
-            html.classList.remove('dark-mode');
-            darkModeToggle.checked = false;
-        }
+        applyTheme(e.matches);
     }
 });
 
@@ -46,4 +53,3 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('section').forEach((section) => {
     observer.observe(section);
 });
-
