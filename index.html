@@ -6,6 +6,7 @@
     <title>Morgan Guinyard</title>
 
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="dark-mode.css" />
     <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
     <link rel="shortcut icon" href="/favicon/favicon.ico" />
@@ -18,8 +19,14 @@
     <nav class="top-bar-container">
         <a href="#home">
             <img
-                class="siteheader-logo"
+                class="siteheader-logo siteheader-logo-light"
                 src="assets/Header SVG Light.svg"
+                alt="Morgan Guinyard Logo"
+                height="90"
+            />
+            <img
+                class="siteheader-logo siteheader-logo-dark"
+                src="assets/Header PNG Dark.png"
                 alt="Morgan Guinyard Logo"
                 height="90"
             />
@@ -28,7 +35,7 @@
         <ul class="top-bar-links">
             <li><a href="#home">home</a></li>
             <li><a href="#about">about</a></li>
-            <li><a href="#blog">takes</a></li>
+            <li><a href="#blog-peek">takes</a></li>
             <li><a href="#projects">projects</a></li>
             
             <li>
@@ -80,7 +87,7 @@
         <h2>some more about me</h2>
 
         <div class="train-map-container">
-            <div class="train-card">
+            <div class="card train-card">
                 <div class="station-content">
                     <img class="station-logo" src="assets/logos/microsoft.png" alt="Microsoft Logo" />
                     <div class="station-text">
@@ -89,7 +96,7 @@
                     </div>
                 </div>
             </div>
-            <div class="train-card">
+            <div class="card train-card">
                 <div class="station-content">
                     <img class="station-logo" src="assets/logos/microsoft.png" alt="Microsoft Logo" />
                     <div class="station-text">
@@ -98,7 +105,7 @@
                     </div>
                 </div>
             </div>
-            <div class="train-card">
+            <div class="card train-card">
                 <div class="station-content">
                     <img class="station-logo dekalb-logo" src="assets/logos/dekalb-schools-light.png" alt="Dekalb County (ATL GA) Logo" />
                     <div class="station-text">
@@ -107,7 +114,7 @@
                     </div>
                 </div>
             </div>
-            <div class="train-card">
+            <div class="card train-card">
                 <div class="station-content">
                     <img class="station-logo" src="assets/logos/arabia-mountain.png" alt="Arabia Mountain High School Logo" />
                     <div class="station-text">
@@ -116,7 +123,7 @@
                     </div>
                 </div>
             </div>
-            <div class="train-card">
+            <div class="card train-card">
                 <div class="station-content">
                     <img class="station-logo" src="assets/logos/gtri.png" alt="Georgia Tech Logo" />
                     <div class="station-text">
@@ -128,23 +135,23 @@
         </div>
     </section>
 
-        <section id ="blog-peek" class = "info-section">
+        <section id="blog-peek" class="info-section">
         <h2>hot takes (cold ones too)</h2>
-        <div class = "latest-posts">
-            <div class ="blog-post-card">
-                <img src = "images/blog-placeholder.png" alt="placeholder image for blog post" />
+        <div class="latest-posts">
+            <div class="card blog-post-card">
+                <img src="assets/placeholder-image.png" alt="placeholder image for blog post" />
                 <h3>coming soon!</h3>
                 <p>coming soon!</p>
                 <a href="#">Read Post</a>
             </div>
-            <div class ="blog-post-card">
-                <img src = "images/blog-placeholder.png" alt="placeholder image for blog post" />
+            <div class="card blog-post-card">
+                <img src="assets/placeholder-image.png" alt="placeholder image for blog post" />
                 <h3>coming soon!</h3>
                 <p>coming soon!</p>
                 <a href="#">Read Post</a>
             </div>
-            <div class ="blog-post-card">
-                <img src = "images/blog-placeholder.png" alt="placeholder image for blog post" />
+            <div class="card blog-post-card">
+                <img src="assets/placeholder-image.png" alt="placeholder image for blog post" />
                 <h3>coming soon!</h3>
                 <p>coming soon!</p>
                 <a href="#">Read Post</a>
@@ -159,7 +166,7 @@
         <h2>projects</h2>
 
         <div class="projects-container">
-            <div class="project-card">
+            <div class="card project-card">
                 <img src="assets/serato-placeholder.png" alt="placeholder image for serato breakpoint project" class="project-image" />
                 <h3>BreakPoint</h3>
                 <p>automatic cue point detection for DJs</p>
