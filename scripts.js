@@ -1,17 +1,10 @@
 // Dark mode toggle
 const darkModeToggle = document.getElementById('dark-mode-toggle');
 const html = document.documentElement;
-const siteHeaderLogo = document.querySelector('.siteheader-logo');
-
-const lightLogoSrc = 'assets/Header SVG Light.svg';
-const darkLogoSrc = 'assets/Header PNG Dark.png'; //canva subscription ran out lol 
 
 function applyTheme(isDark) {
     html.classList.toggle('dark-mode', isDark);
     darkModeToggle.checked = isDark;
-    if (siteHeaderLogo) {
-        siteHeaderLogo.src = isDark ? darkLogoSrc : lightLogoSrc;
-    }
 }
 
 // check for saved dark mode preference or system preference
