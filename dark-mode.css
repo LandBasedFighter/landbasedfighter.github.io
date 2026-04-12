@@ -1,0 +1,46 @@
+.dark-mode {
+    --bg-primary: #121212;
+    --bg-secondary: #1e1e1e;
+    --text-primary: #f0f0f0;
+    --text-secondary: #aaaaaa;
+    --text-muted: #888888;
+    --shadow-color: rgba(0, 0, 0, 0.5);
+    --marta-black: #e8e8e8;
+}
+
+/* Logo swap */
+.dark-mode .siteheader-logo-light {
+    display: none;
+}
+
+.dark-mode .siteheader-logo-dark {
+    display: block;
+}
+
+/* DeKalb County logo dark version */
+.dark-mode .dekalb-logo {
+    content: url('assets/logos/dekalb-schools-dark.png');
+}
+
+/* Hero section */
+.dark-mode .train-hero {
+    background: linear-gradient(135deg, #1a1a1a 0%, #222222 100%);
+}
+
+.dark-mode .hero-image img {
+    border-color: #2a2a2a;
+}
+
+/* Toggle slider */
+.dark-mode .slider {
+    background-color: #444;
+}
+
+/* Footer skyline */
+.dark-mode .footer-skyline path {
+    fill: var(--marta-blue);
+}
+
+.dark-mode .footer-skyline {
+    opacity: 0.2;
+}

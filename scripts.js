@@ -46,3 +46,20 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('section').forEach((section) => {
     observer.observe(section);
 });
+
+// Hamburger menu toggle
+const hamburgerBtn = document.getElementById('hamburger-btn');
+const topBarLinks = document.getElementById('top-bar-links');
+
+if (hamburgerBtn && topBarLinks) {
+    hamburgerBtn.addEventListener('click', () => {
+        topBarLinks.classList.toggle('open');
+    });
+
+    // Close menu when a nav link is clicked
+    topBarLinks.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => {
+            topBarLinks.classList.remove('open');
+        });
+    });
+}
