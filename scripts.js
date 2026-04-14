@@ -17,7 +17,7 @@ const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matche
 if (savedDarkMode !== null) {
     applyTheme(savedDarkMode === 'true');
 } else {
-    applyTheme(prefersDarkMode);
+    applyTheme(false);
 }
 
 darkModeToggle.addEventListener('change', () => {
