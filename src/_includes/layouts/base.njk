@@ -3,51 +3,51 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Takes | Morgan Guinyard</title>
+    <title>{{ title }}</title>
 
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="dark-mode.css" />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/dark-mode.css" />
     <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
     <link rel="shortcut icon" href="/favicon/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="Morgan Guinyard" />
     <link rel="manifest" href="/favicon/site.webmanifest" />
-    <meta name="description" content="Hot takes and cold ones too — opinions, observations, and the occasional rant from Morgan Guinyard." />
+    <meta name="description" content="{{ description }}" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Takes | Morgan Guinyard" />
-    <meta property="og:description" content="Hot takes and cold ones too — opinions, observations, and the occasional rant from Morgan Guinyard." />
-    <meta property="og:image" content="assets/morgan-hero.jpg" />
+    <meta property="og:title" content="{{ ogTitle if ogTitle else title }}" />
+    <meta property="og:description" content="{{ description }}" />
+    <meta property="og:image" content="/assets/morgan-hero.jpg" />
 </head>
 
 <body>
-    <nav class="top-bar-container">
-        <a href="index.html">
+    <nav class="top-bar-container" aria-label="Main navigation">
+        <a href="/">
             <img
                 class="siteheader-logo siteheader-logo-light"
-                src="assets/Header SVG Light.svg"
+                src="/assets/Header SVG Light.svg"
                 alt="Morgan Guinyard Logo"
                 height="90"
             />
             <img
                 class="siteheader-logo siteheader-logo-dark"
-                src="assets/Header PNG Dark.png"
+                src="/assets/Header PNG Dark.png"
                 alt="Morgan Guinyard Logo"
                 height="90"
             />
         </a>
 
-        <button class="hamburger" id="hamburger-btn" aria-label="Toggle navigation">
+        <button class="hamburger" id="hamburger-btn" aria-label="Toggle navigation" aria-expanded="false">
             <span></span>
             <span></span>
             <span></span>
         </button>
 
         <ul class="top-bar-links" id="top-bar-links">
-            <li><a href="index.html">home</a></li>
-            <li><a href="index.html#about">about</a></li>
-            <li><a href="blog.html">takes</a></li>
-            <li><a href="index.html#projects">projects</a></li>
+            <li><a href="/#home">home</a></li>
+            <li><a href="/#about">about</a></li>
+            <li><a href="/blog/">takes</a></li>
+            <li><a href="/#projects">projects</a></li>
             <li>
                 <label class="toggle-switch">
                     <input type="checkbox" id="dark-mode-toggle" />
@@ -58,33 +58,7 @@
         </ul>
     </nav>
 
-    <section class="blog-hero">
-        <h1>hot takes (cold ones too)</h1>
-        <p>opinions, observations, and the occasional rant</p>
-    </section>
-
-    <section class="info-section">
-        <div class="latest-posts">
-            <div class="card blog-post-card">
-                <img src="assets/placeholder-image.png" alt="" />
-                <h3>coming soon!</h3>
-                <p>check back soon for fresh takes.</p>
-                <span class="coming-soon-badge">coming soon</span>
-            </div>
-            <div class="card blog-post-card">
-                <img src="assets/placeholder-image.png" alt="" />
-                <h3>coming soon!</h3>
-                <p>check back soon for fresh takes.</p>
-                <span class="coming-soon-badge">coming soon</span>
-            </div>
-            <div class="card blog-post-card">
-                <img src="assets/placeholder-image.png" alt="" />
-                <h3>coming soon!</h3>
-                <p>check back soon for fresh takes.</p>
-                <span class="coming-soon-badge">coming soon</span>
-            </div>
-        </div>
-    </section>
+    {{ content | safe }}
 
     <footer>
         <div class="footer-content">
@@ -100,6 +74,6 @@
         </svg>
     </footer>
 
-    <script src="scripts.js"></script>
+    <script src="/scripts.js"></script>
 </body>
 </html>

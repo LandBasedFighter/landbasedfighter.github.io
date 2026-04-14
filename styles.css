@@ -29,11 +29,14 @@ body {
 }
 
 section {
-    opacity: 0;
     transition: opacity 0.8s ease-in-out, background-color 0.3s ease, color 0.3s ease;
 }
 
-section.visible { 
+.js-animations section {
+    opacity: 0;
+}
+
+section.visible {
     opacity: 1;
 }
 
@@ -448,7 +451,7 @@ input:checked + .slider::before {
 }
 
 footer {
-    background-color: var(--bg-secondary);
+    background-color: #f5f1eb;
     padding: 40px 0 0;
     position: relative;
     transition: background-color 0.3s ease, color 0.3s ease;
@@ -518,7 +521,19 @@ footer {
     width: 25px;
     height: 2px;
     background-color: var(--text-primary);
-    transition: background-color 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
+}
+
+.hamburger.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
 }
 
 .blog-hero {
@@ -593,10 +608,7 @@ footer {
     font-size: 8rem;
     font-weight: 900;
     line-height: 1;
-    background: linear-gradient(135deg, var(--marta-blue), var(--marta-orange));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--text-primary);
     margin-bottom: 20px;
 }
 

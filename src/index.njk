@@ -1,0 +1,141 @@
+---
+layout: base.njk
+title: Morgan Guinyard
+description: Morgan Guinyard — CS student at Georgia State, software developer, and writer. Interning at Microsoft. Building software that feels good to use.
+---
+
+<section id="home" class="train-hero">
+    <div class="hero-text">
+        <h1>hi! i'm morgan!</h1>
+        <h2>student / developer / writer</h2>
+        <h3>
+            <i>
+                short on time? view my resume
+                <a
+                    href="https://drive.google.com/uc?export=download&id=19ofTGUeufJ1FlJ2bpOPQiq98SH430cnU"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    here
+                </a>
+            </i>.
+        </h3>
+    </div>
+
+    <div class="hero-image">
+        <img
+            src="/assets/morgan-hero.jpg"
+            alt="An image of Morgan Guinyard. She is standing in front of a snow-covered panther statue on Georgia State University's campus."
+        />
+    </div>
+</section>
+
+<section id="about" class="info-section">
+    <h2>about me</h2>
+    <p>
+        i'm a cs student at georgia state who likes building software that actually feels good to use.
+        when i'm not coding or writing, i'm hiking, cooking, or exploring atlanta one bike lane at a time.
+        i am a lifelong falcons fan (derogatory).
+    </p>
+</section>
+
+<section id="some-more" class="info-section">
+    <h2>some more about me</h2>
+
+    <div class="train-map-container">
+        <div class="card train-card">
+            <div class="station-content">
+                <img class="station-logo" src="/assets/logos/microsoft.png" alt="Microsoft Logo" loading="lazy" />
+                <div class="station-text">
+                    <h3>Microsoft SWE University Intern</h3>
+                    <p>OneDrive SharePoint (Summer 2026)</p>
+                </div>
+            </div>
+        </div>
+        <div class="card train-card">
+            <div class="station-content">
+                <img class="station-logo" src="/assets/logos/microsoft.png" alt="Microsoft Logo" loading="lazy" />
+                <div class="station-text">
+                    <h3>Microsoft Explore Intern</h3>
+                    <p>OneDrive SharePoint (Summer 2025)</p>
+                </div>
+            </div>
+        </div>
+        <div class="card train-card">
+            <div class="station-content">
+                <img class="station-logo" src="/assets/logos/microsoft.png" alt="Microsoft Logo" loading="lazy" />
+                <div class="station-text">
+                    <h3>Microsoft Discovery Intern</h3>
+                    <p>Azure Core (Summer 2024)</p>
+                </div>
+            </div>
+        </div>
+        <div class="card train-card">
+            <div class="station-content">
+                <img class="station-logo dekalb-logo" src="/assets/logos/dekalb-schools-light.png" alt="Dekalb County (ATL GA) Logo" loading="lazy" />
+                <div class="station-text">
+                    <h3>IT Helpdesk Intern</h3>
+                    <p>Dekalb County School District (Spring 2024)</p>
+                </div>
+            </div>
+        </div>
+        <div class="card train-card">
+            <div class="station-content">
+                <img class="station-logo" src="/assets/logos/arabia-mountain.png" alt="Arabia Mountain High School Logo" loading="lazy" />
+                <div class="station-text">
+                    <h3>CS Teaching Assistant</h3>
+                    <p>Arabia Mountain High School (Fall 2023-Spring 2024)</p>
+                </div>
+            </div>
+        </div>
+        <div class="card train-card">
+            <div class="station-content">
+                <img class="station-logo" src="/assets/logos/gtri.png" alt="Georgia Tech Logo" loading="lazy" />
+                <div class="station-text">
+                    <h3>Research Intern</h3>
+                    <p>SEAD, Georgia Tech Research Institute (Summer 2023)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="blog-peek" class="info-section">
+    <h2>hot takes (cold ones too)</h2>
+    {% if collections.posts and collections.posts.length %}
+    <div class="latest-posts">
+        {% for post in collections.posts | limit(1) %}
+        <div class="card blog-post-card">
+            <div class="blog-post-card-text">
+                <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
+                {% if post.data.description %}<p>{{ post.data.description }}</p>{% endif %}
+                <time datetime="{{ post.date | htmlDate }}">{{ post.date | readableDate }}</time>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="view-all-container">
+        <a href="/blog/"><i>view all takes</i></a>
+    </div>
+    {% else %}
+    <div class="blog-coming-soon">
+        <p>posts incoming. check back soon.</p>
+        <a href="/blog/"><i>view all takes</i></a>
+    </div>
+    {% endif %}
+</section>
+
+<section id="projects" class="info-section">
+    <h2>projects</h2>
+
+    <div class="projects-container">
+        <div class="card project-card">
+            <img src="/assets/serato-placeholder.png" alt="BreakPoint - automatic cue point detection" class="project-image" loading="lazy" />
+            <h3>BreakPoint</h3>
+            <p>automatic cue point detection for DJs. Analyze audio to find the perfect drop points for seamless mixing.</p>
+            <div class="project-links">
+                <a href="https://github.com/LandBasedFighter/breakpoint" target="_blank" rel="noopener noreferrer">github</a>
+            </div>
+        </div>
+    </div>
+</section>

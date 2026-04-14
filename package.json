@@ -1,0 +1,12 @@
+{
+  "name": "portfoliosite",
+  "version": "1.0.0",
+  "description": "Morgan Guinyard's portfolio",
+  "scripts": {
+    "build": "eleventy",
+    "start": "eleventy --serve"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}

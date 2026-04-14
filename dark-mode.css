@@ -28,12 +28,18 @@
 }
 
 .dark-mode .hero-image img {
-    border-color: #2a2a2a;
+    border-color: #1a1a1a;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6), inset 0 0 0 2px rgba(0, 146, 208, 0.5);
 }
 
 /* Toggle slider */
 .dark-mode .slider {
     background-color: #444;
+}
+
+/* Footer background matches hero */
+.dark-mode footer {
+    background-color: #222222;
 }
 
 /* Footer skyline */

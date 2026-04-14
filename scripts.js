@@ -1,3 +1,6 @@
+// Enable JS-powered animations (keeps content visible if JS fails)
+document.body.classList.add('js-animations');
+
 // Dark mode toggle
 const darkModeToggle = document.getElementById('dark-mode-toggle');
 const html = document.documentElement;
@@ -47,19 +50,28 @@ document.querySelectorAll('section').forEach((section) => {
     observer.observe(section);
 });
 
+// Dynamic copyright year
+document.querySelectorAll('.footer-copy').forEach((el) => {
+    el.textContent = `© ${new Date().getFullYear()} Morgan Guinyard`;
+});
+
 // Hamburger menu toggle
 const hamburgerBtn = document.getElementById('hamburger-btn');
 const topBarLinks = document.getElementById('top-bar-links');
 
 if (hamburgerBtn && topBarLinks) {
     hamburgerBtn.addEventListener('click', () => {
-        topBarLinks.classList.toggle('open');
+        const isOpen = topBarLinks.classList.toggle('open');
+        hamburgerBtn.classList.toggle('open', isOpen);
+        hamburgerBtn.setAttribute('aria-expanded', isOpen);
     });
 
     // Close menu when a nav link is clicked
     topBarLinks.querySelectorAll('a').forEach((link) => {
         link.addEventListener('click', () => {
             topBarLinks.classList.remove('open');
+            hamburgerBtn.classList.remove('open');
+            hamburgerBtn.setAttribute('aria-expanded', false);
         });
     });
 }
