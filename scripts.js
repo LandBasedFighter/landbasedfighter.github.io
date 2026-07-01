@@ -26,6 +26,18 @@ document.querySelectorAll('.footer-copy').forEach((el) => {
     el.textContent = `© ${new Date().getFullYear()} morgan guinyard`;
 });
 
+document.querySelectorAll('a[href="/"]').forEach((link) => {
+    link.addEventListener('click', (event) => {
+        if (window.location.pathname !== '/' && window.location.pathname !== '/index.html') {
+            return;
+        }
+
+        event.preventDefault();
+        window.history.pushState(null, '', '/');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+});
+
 (function () {
     const KONAMI = [
         'ArrowUp','ArrowUp',
