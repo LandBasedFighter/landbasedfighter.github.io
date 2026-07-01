@@ -241,15 +241,15 @@ input:checked + .slider::before {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-left: 10%;
+    padding: 0 4% 0 10%;
     position: relative;
 }
 
 .hero-image::before {
     content: "";
     position: absolute;
-    width: 420px;
-    height: 500px;
+    width: clamp(260px, 34vw, 420px);
+    height: clamp(320px, 40vw, 500px);
     background: var(--marta-yellow);
     opacity: 0.3;
     border-radius: 8px;
@@ -263,6 +263,7 @@ input:checked + .slider::before {
     width: 100%;
     height: auto;
     max-width: 400px;
+    min-width: 0;
     box-shadow: 0 10px 30px var(--shadow-color), inset 0 0 0 2px var(--marta-blue);
     transition: transform 0.4s ease, filter 0.4s ease;
     border-radius: 8px;
@@ -731,8 +732,8 @@ button:focus-visible {
     }
 
     .hero-image::before {
-        width: 320px;
-        height: 320px;
+        width: clamp(260px, 64vw, 360px);
+        height: clamp(260px, 64vw, 360px);
     }
 
     .footer-content {
