@@ -1,7 +1,6 @@
 module.exports = function (eleventyConfig) {
     // Static files — copied from project root into _site/
     eleventyConfig.addPassthroughCopy({ "styles.css": "styles.css" });
-    eleventyConfig.addPassthroughCopy({ "dark-mode.css": "dark-mode.css" });
     eleventyConfig.addPassthroughCopy({ "scripts.js": "scripts.js" });
     eleventyConfig.addPassthroughCopy({ "assets": "assets" });
     eleventyConfig.addPassthroughCopy({ "favicon": "favicon" });

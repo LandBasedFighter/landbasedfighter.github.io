@@ -1,35 +1,5 @@
 document.body.classList.add('js-animations');
 
-const darkModeToggle = document.getElementById('dark-mode-toggle');
-const html = document.documentElement;
-
-function applyTheme(isDark) {
-    html.classList.toggle('dark-mode', isDark);
-    darkModeToggle.checked = isDark;
-}
-
-const savedDarkMode = localStorage.getItem('darkMode');
-const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-if (savedDarkMode !== null) {
-    applyTheme(savedDarkMode === 'true');
-} else {
-    applyTheme(false);
-}
-
-darkModeToggle.addEventListener('change', () => {
-    const isDarkMode = darkModeToggle.checked;
-    localStorage.setItem('darkMode', isDarkMode);
-    applyTheme(isDarkMode);
-});
-
-const darkModeQuery = window.matchMedia('(prefers-color-scheme: dark)');
-darkModeQuery.addEventListener('change', (e) => {
-    if (localStorage.getItem('darkMode') === null) {
-        applyTheme(e.matches);
-    }
-});
-
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
