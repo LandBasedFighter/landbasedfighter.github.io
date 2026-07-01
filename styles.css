@@ -29,15 +29,7 @@ body {
 }
 
 section {
-    transition: opacity 0.8s ease-in-out, background-color 0.3s ease, color 0.3s ease;
-}
-
-.js-animations section {
-    opacity: 0;
-}
-
-section.visible {
-    opacity: 1;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .top-bar-container {

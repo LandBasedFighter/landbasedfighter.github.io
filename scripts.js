@@ -1,21 +1,29 @@
-document.body.classList.add('js-animations');
+const sections = document.querySelectorAll('section');
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-        }
+if ('IntersectionObserver' in window) {
+    document.body.classList.add('js-animations');
+
+    const observer = new window.IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, {
+        threshold: 0.1,
     });
-}, {
-    threshold: 0.1,
-});
 
-document.querySelectorAll('section').forEach((section) => {
-    observer.observe(section);
-});
+    sections.forEach((section) => {
+        observer.observe(section);
+    });
+} else {
+    sections.forEach((section) => {
+        section.classList.add('visible');
+    });
+}
 
 document.querySelectorAll('.footer-copy').forEach((el) => {
-    el.textContent = `© ${new Date().getFullYear()} Morgan Guinyard`;
+    el.textContent = `© ${new Date().getFullYear()} morgan guinyard`;
 });
 
 (function () {
