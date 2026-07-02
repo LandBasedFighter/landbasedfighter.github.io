@@ -9,9 +9,9 @@ description: Hot takes and cold ones too — opinions, observations, and the occ
     <p>opinions, observations, and the occasional rant</p>
 </section>
 
-<section class="info-section">
+<section class="info-section blog-list-section">
     {% if collections.posts and collections.posts.length %}
-    <div class="latest-posts">
+    <div class="blog-post-list">
         {% for post in collections.posts %}
         <div class="card blog-post-card">
             <div class="blog-post-card-text">
@@ -23,7 +23,7 @@ description: Hot takes and cold ones too — opinions, observations, and the occ
         {% endfor %}
     </div>
     {% else %}
-    <div class="blog-coming-soon">
+    <div class="blog-empty-state">
         <p>posts incoming. check back soon.</p>
     </div>
     {% endif %}
