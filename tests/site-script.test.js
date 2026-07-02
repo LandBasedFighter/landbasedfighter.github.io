@@ -26,9 +26,31 @@ function runSiteScript(contextOverrides = {}) {
     const script = fs.readFileSync(path.join(__dirname, '..', 'scripts.js'), 'utf8');
     const sections = [{ classList: createClassList() }, { classList: createClassList() }];
     const footerCopy = { textContent: '' };
+    const createLink = (href) => {
+        const listeners = {};
+        return {
+            target: '',
+            addEventListener: (eventName, handler) => {
+                listeners[eventName] = listeners[eventName] || [];
+                listeners[eventName].push(handler);
+            },
+            getAttribute: (name) => (name === 'href' ? href : ''),
+            click: (event = {}) => {
+                (listeners.click || []).forEach((handler) => handler({
+                    button: 0,
+                    metaKey: false,
+                    ctrlKey: false,
+                    shiftKey: false,
+                    altKey: false,
+                    defaultPrevented: false,
+                    ...event,
+                }));
+            },
+        };
+    };
     const homeLinks = [
-        { addEventListener: (eventName, handler) => { homeLinks[0][eventName] = handler; } },
-        { addEventListener: (eventName, handler) => { homeLinks[1][eventName] = handler; } },
+        createLink('/'),
+        createLink('/'),
     ];
     const bodyClassList = createClassList();
 
@@ -50,17 +72,40 @@ function runSiteScript(contextOverrides = {}) {
                 return homeLinks;
             }
 
+            if (selector === 'a[href]') {
+                return homeLinks;
+            }
+
             return [];
         },
     };
 
+    const baseLocation = {
+        href: 'https://morganguinyard.com/',
+        origin: 'https://morganguinyard.com',
+        pathname: '/',
+        hash: '',
+    };
+
+    const baseWindow = {
+        location: baseLocation,
+        history: { pushState: () => {} },
+        addEventListener: () => {},
+        setTimeout: (handler) => handler(),
+    };
+
     const context = {
         document,
-        window: {
-            location: { pathname: '/' },
-            history: { pushState: () => {} },
-        },
+        URL,
         ...contextOverrides,
+        window: {
+            ...baseWindow,
+            ...(contextOverrides.window || {}),
+            location: {
+                ...baseLocation,
+                ...((contextOverrides.window || {}).location || {}),
+            },
+        },
     };
 
     vm.runInNewContext(script, context);

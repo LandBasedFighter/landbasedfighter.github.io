@@ -61,10 +61,18 @@
             </div>
 
             <div class="hero-image">
-                <img
-                    src="assets/morgan-hero.jpg"
-                    alt="An image of Morgan Guinyard. She is standing in front of a snow-covered panther statue on Georgia State University's campus."
-                />
+                <picture class="hero-picture">
+                    <img
+                        src="assets/morgan-hero-800.jpg"
+                        srcset="assets/morgan-hero-320.jpg 320w, assets/morgan-hero-480.jpg 480w, assets/morgan-hero-800.jpg 800w"
+                        sizes="(max-width: 768px) 68vw, 400px"
+                        width="800"
+                        height="1067"
+                        decoding="async"
+                        fetchpriority="high"
+                        alt="An image of Morgan Guinyard. She is standing in front of a snow-covered panther statue on Georgia State University's campus."
+                    />
+                </picture>
             </div>
         </div>
     </section>

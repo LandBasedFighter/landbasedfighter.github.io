@@ -234,6 +234,10 @@ section {
     position: relative;
 }
 
+.hero-picture {
+    display: block;
+}
+
 .hero-image::before {
     content: "";
     position: absolute;
@@ -387,7 +391,7 @@ section {
 .blog-empty-state {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: left;
     min-height: 220px;
     color: var(--text-muted);
     font-size: 1rem;
