@@ -24,7 +24,10 @@ function createClassList() {
 
 function runSiteScript(contextOverrides = {}) {
     const script = fs.readFileSync(path.join(__dirname, '..', 'scripts.js'), 'utf8');
-    const sections = [{ classList: createClassList() }, { classList: createClassList() }];
+    const heroSection = { id: 'home', classList: createClassList() };
+    heroSection.classList.add('train-hero');
+    const sections = [heroSection, { id: 'about', classList: createClassList() }];
+    const card = { classList: createClassList() };
     const footerCopy = { textContent: '' };
     const createLink = (href) => {
         const listeners = {};
@@ -62,6 +65,14 @@ function runSiteScript(contextOverrides = {}) {
         querySelectorAll: (selector) => {
             if (selector === 'section') {
                 return sections;
+            }
+
+            if (selector === 'section, .card') {
+                return [...sections, card];
+            }
+
+            if (selector === 'section:not(.train-hero), .card') {
+                return [sections[1], card];
             }
 
             if (selector === '.footer-copy') {
@@ -124,6 +135,29 @@ test('does not depend on JavaScript to make page sections visible', () => {
     const css = fs.readFileSync(path.join(__dirname, '..', 'styles.css'), 'utf8');
 
     assert.doesNotMatch(css, /\.js-animations\s+section\s*\{[^}]*opacity:\s*0\b/s);
+});
+
+test('keeps the homepage hero out of scroll reveal animations', () => {
+    const observerInstances = [];
+
+    function IntersectionObserver() {
+        const observedItems = [];
+        const instance = {
+            observedItems,
+            observe: (item) => {
+                observedItems.push(item);
+            },
+        };
+        observerInstances.push(instance);
+        return instance;
+    }
+
+    const { sections } = runSiteScript({
+        window: { IntersectionObserver },
+    });
+
+    assert.equal(sections[0].classList.contains('reveal-item'), false);
+    assert.equal(observerInstances[0].observedItems.includes(sections[0]), false);
 });
 
 test('renders footer name in lowercase', () => {

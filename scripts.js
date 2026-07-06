@@ -1,5 +1,5 @@
 const sections = document.querySelectorAll('section');
-const revealItems = document.querySelectorAll('section, .card');
+const revealItems = document.querySelectorAll('section:not(.train-hero), .card');
 
 if ('IntersectionObserver' in window) {
     document.body.classList.add('motion-ready');
