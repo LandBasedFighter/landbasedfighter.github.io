@@ -11,15 +11,13 @@ description: Hot takes and cold ones too — opinions, observations, and the occ
 
 <section class="info-section blog-list-section">
     {% if collections.posts and collections.posts.length %}
-    <div class="blog-post-list">
+    <div class="blog-list">
         {% for post in collections.posts %}
-        <div class="card blog-post-card">
-            <div class="blog-post-card-text">
-                <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
-                {% if post.data.description %}<p>{{ post.data.description }}</p>{% endif %}
-                <time datetime="{{ post.date | htmlDate }}">{{ post.date | readableDate }}</time>
-            </div>
-        </div>
+        <article class="blog-list-item">
+            <time datetime="{{ post.date | htmlDate }}">{{ post.date | readableDate }}</time>
+            <h2><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
+            {% if post.data.description %}<p>{{ post.data.description }}</p>{% endif %}
+        </article>
         {% endfor %}
     </div>
     {% else %}

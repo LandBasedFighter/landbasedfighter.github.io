@@ -318,10 +318,122 @@ section {
     padding-left: 30px;
 }
 
-.blog-post-list {
+.blog-list {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    max-width: 860px;
+}
+
+.blog-list-item {
+    border-left: 4px solid #ea0213;
+    padding: 4px 0 6px 24px;
+}
+
+.blog-list-item time {
+    color: var(--text-muted);
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.blog-list-item h2 {
+    font-size: clamp(1.55rem, 3vw, 2.15rem);
+    line-height: 1.12;
+    margin-bottom: 12px;
+}
+
+.blog-list-item h2 a {
+    color: var(--text-primary);
+    text-decoration: none;
+}
+
+.blog-list-item h2 a:hover {
+    color: var(--marta-blue);
+}
+
+.blog-list-item p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.65;
+    margin: 0;
+    max-width: 720px;
+}
+
+.blog-peek-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 24px;
+}
+
+.blog-peek-card {
+    background-color: var(--bg-secondary);
+    border: 1px solid rgba(26, 26, 26, 0.06);
+    border-radius: 12px;
+    box-shadow: 0 12px 34px rgba(26, 26, 26, 0.12);
+    display: grid;
+    grid-template-columns: minmax(220px, 0.42fr) 1fr;
+    max-width: 940px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.blog-peek-card:hover {
+    box-shadow: 0 16px 40px rgba(26, 26, 26, 0.16);
+    transform: translateY(-3px);
+}
+
+.blog-peek-card-media {
+    background: #221f1c;
+    display: block;
+    min-height: 220px;
+}
+
+.blog-peek-card-media img {
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+
+.blog-peek-card-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: clamp(24px, 4vw, 38px);
+}
+
+.blog-peek-card time {
+    color: var(--text-muted);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.blog-peek-card h3 {
+    font-size: clamp(1.55rem, 3vw, 2rem);
+    line-height: 1.12;
+    margin: 0 0 14px;
+}
+
+.blog-peek-card h3 a {
+    color: var(--text-primary);
+    text-decoration: none;
+}
+
+.blog-peek-card h3 a:hover {
+    color: var(--marta-blue);
+}
+
+.blog-peek-card p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
 }
 
 .card {
@@ -876,6 +988,14 @@ button:focus-visible {
     .projects-container,
     .latest-posts {
         padding-left: 18px;
+    }
+
+    .blog-peek-card {
+        grid-template-columns: 1fr;
+    }
+
+    .blog-peek-card-media {
+        min-height: 170px;
     }
 
     .train-map-container {

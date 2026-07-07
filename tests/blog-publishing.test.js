@@ -61,6 +61,29 @@ test('built site publishes the first post and surfaces it from blog entry points
     assert.match(homeHtml, /\/blog\/tech-is-losing-young-americans\//);
 });
 
+test('blog index uses editorial list entries instead of generic cards', () => {
+    const blogTemplate = read(path.join('src', 'blog.njk'));
+    const css = read('styles.css');
+
+    assert.match(blogTemplate, /class="blog-list"/);
+    assert.match(blogTemplate, /class="blog-list-item"/);
+    assert.doesNotMatch(blogTemplate, /class="card blog-post-card"/);
+    assert.match(css, /\.blog-list-item\s*\{[^}]*border-left:\s*4px solid #ea0213;/s);
+    assert.match(css, /\.blog-list-item time\s*\{/);
+});
+
+test('homepage blog peek uses image cards with post hero art', () => {
+    const homeTemplate = read(path.join('src', 'index.njk'));
+    const css = read('styles.css');
+
+    assert.match(homeTemplate, /class="blog-peek-grid"/);
+    assert.match(homeTemplate, /class="blog-peek-card"/);
+    assert.match(homeTemplate, /src="\{\{ post\.data\.heroImage \}\}"/);
+    assert.match(homeTemplate, /class="blog-peek-card-media"/);
+    assert.match(css, /\.blog-peek-card-media\s+img\s*\{/);
+    assert.match(css, /\.blog-peek-card\s+time\s*\{/);
+});
+
 test('post editorial styles constrain the reading column and body figure', () => {
     const css = read('styles.css');
 

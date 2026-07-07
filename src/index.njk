@@ -137,15 +137,20 @@ description: Morgan Guinyard — CS student at Georgia State, software developer
 <section id="blog-peek" class="info-section">
     <h2>hot takes (cold ones too)</h2>
     {% if collections.posts and collections.posts.length %}
-    <div class="latest-posts">
+    <div class="blog-peek-grid">
         {% for post in collections.posts | limit(1) %}
-        <div class="card blog-post-card">
-            <div class="blog-post-card-text">
+        <article class="blog-peek-card">
+            {% if post.data.heroImage %}
+            <a class="blog-peek-card-media" href="{{ post.url }}" aria-label="Read {{ post.data.title }}">
+                <img src="{{ post.data.heroImage }}" alt="{{ post.data.heroImageAlt or '' }}" loading="lazy" />
+            </a>
+            {% endif %}
+            <div class="blog-peek-card-text">
+                <time datetime="{{ post.date | htmlDate }}">{{ post.date | readableDate }}</time>
                 <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
                 {% if post.data.description %}<p>{{ post.data.description }}</p>{% endif %}
-                <time datetime="{{ post.date | htmlDate }}">{{ post.date | readableDate }}</time>
             </div>
-        </div>
+        </article>
         {% endfor %}
     </div>
     <div class="view-all-container">
