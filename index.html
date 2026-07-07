@@ -4,33 +4,33 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Morgan Guinyard</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="/styles.css" />
     <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
     <link rel="shortcut icon" href="/favicon/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="Morgan Guinyard" />
     <link rel="manifest" href="/favicon/site.webmanifest" />
-    <meta name="description" content="Morgan Guinyard" />
+    <meta name="description" content="Morgan Guinyard — CS student at Georgia State, software developer, and writer. Interning at Microsoft. Building software that feels good to use." />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Morgan Guinyard" />
-    <meta property="og:description" content="Morgan Guinyard" />
-    <meta property="og:image" content="assets/logos/Header SVG Light.svg" />
+    <meta property="og:description" content="Morgan Guinyard — CS student at Georgia State, software developer, and writer. Interning at Microsoft. Building software that feels good to use." />
+    <meta property="og:image" content="https://morganguinyard.com/assets/Header SVG Light preview.png" />
 </head>
 
 <body>
-    <nav class="top-bar-container">
+    <nav class="top-bar-container" aria-label="Main navigation">
         <div class="top-bar-content">
             <a href="/">
                 <img
                     class="siteheader-logo"
-                    src="assets/Header SVG Light.svg"
+                    src="/assets/Header SVG Light.svg"
                     alt="Morgan Guinyard Logo"
                     height="90"
                 />
             </a>
 
-            <button class="hamburger" id="hamburger-btn" aria-label="Toggle navigation">
+            <button class="hamburger" id="hamburger-btn" aria-label="Toggle navigation" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -38,161 +38,184 @@
 
             <ul class="top-bar-links" id="top-bar-links">
                 <li><a href="/">home</a></li>
-                <li><a href="#about">about</a></li>
-                <li><a href="#blog-peek">takes</a></li>
-                <li><a href="#projects">projects</a></li>
+                <li><a href="/#about">about</a></li>
+                <li><a href="/blog/">takes</a></li>
+                <li><a href="/#projects">projects</a></li>
             </ul>
         </div>
     </nav>
 
-    <section id="home" class="train-hero">
-        <div class="train-hero-inner">
-            <div class="hero-text">
-                <h1>hi! i'm morgan!</h1>
-                <h2>student / developer / writer</h2>
-                <h3>
-                    <i>
-                        short on time? view my resume
-                        <a href="assets/morgan-guinyard-resume.pdf" download rel="nofollow">
-                            here
-                        </a>
-                    </i>.
-                </h3>
-            </div>
-
-            <div class="hero-image">
-                <picture class="hero-picture">
-                    <img
-                        src="assets/morgan-hero-800.jpg"
-                        srcset="assets/morgan-hero-320.jpg 320w, assets/morgan-hero-480.jpg 480w, assets/morgan-hero-800.jpg 800w"
-                        sizes="(max-width: 768px) 68vw, 400px"
-                        width="800"
-                        height="1067"
-                        decoding="async"
-                        fetchpriority="high"
-                        alt="An image of Morgan Guinyard. She is standing in front of a snow-covered panther statue on Georgia State University's campus."
-                    />
-                </picture>
-            </div>
+    
+<section id="home" class="train-hero">
+    <div class="train-hero-inner">
+        <div class="hero-text">
+            <h1>hi! i'm morgan!</h1>
+            <h2>student / developer / writer</h2>
+            <h3>
+                <i>
+                    short on time? view my resume
+                    <a
+                        href="/assets/morgan-guinyard-resume.pdf"
+                        target="_blank"
+                        rel="nofollow noopener noreferrer"
+                    >
+                        here
+                    </a>
+                </i>.
+            </h3>
         </div>
-    </section>
 
-    <section id="about" class="info-section">
-        <h2>about me</h2>
-        <p>
-            i'm a cs student at georgia state who likes building software that actually feels good to use.
-            when i'm not coding or writing, i'm hiking, cooking, or exploring atlanta one bike lane at a time.
-            i am a lifelong falcons fan (derogatory).
-        </p>
-    </section>
+        <div class="hero-image">
+            <picture class="hero-picture">
+                <img
+                    src="/assets/morgan-hero-800.jpg"
+                    srcset="/assets/morgan-hero-320.jpg 320w, /assets/morgan-hero-480.jpg 480w, /assets/morgan-hero-800.jpg 800w"
+                    sizes="(max-width: 768px) 68vw, 400px"
+                    width="800"
+                    height="1067"
+                    decoding="async"
+                    fetchpriority="high"
+                    alt="An image of Morgan Guinyard. She is standing in front of a snow-covered panther statue on Georgia State University's campus."
+                />
+            </picture>
+        </div>
+    </div>
+</section>
 
-    <section id="some-more" class="info-section">
-        <h2>some more about me</h2>
+<section id="about" class="info-section">
+    <h2>about me</h2>
+    <p>
+        i'm a cs student at georgia state who likes building software that actually feels good to use.
+        when i'm not coding or writing, i'm hiking, cooking, or exploring atlanta one bike lane at a time.
+        i am a lifelong falcons fan (derogatory).
+    </p>
+</section>
 
-        <div class="train-map-container">
-            <div class="card train-card">
-                <div class="station-content">
-                    <img class="station-logo" src="assets/logos/microsoft.png" alt="Microsoft Logo" loading="lazy" />
-                    <div class="station-text">
-                        <h3>Microsoft SWE University Intern</h3>
-                        <p>OneDrive SharePoint (Summer 2026)</p>
-                        <div class="station-meta" aria-label="Experience details">
-                            <span class="station-chip">2026</span>
-                            <span class="station-chip">internship</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card train-card">
-                <div class="station-content">
-                    <img class="station-logo" src="assets/logos/microsoft.png" alt="Microsoft Logo" loading="lazy" />
-                    <div class="station-text">
-                        <h3>Microsoft Explore Intern</h3>
-                        <p>OneDrive SharePoint (Summer 2025)</p>
-                        <div class="station-meta" aria-label="Experience details">
-                            <span class="station-chip">2025</span>
-                            <span class="station-chip">internship</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card train-card">
-                <div class="station-content">
-                    <img class="station-logo" src="assets/logos/microsoft.png" alt="Microsoft Logo" loading="lazy" />
-                    <div class="station-text">
-                        <h3>Microsoft Discovery Intern</h3>
-                        <p>Azure Core (Summer 2024)</p>
-                        <div class="station-meta" aria-label="Experience details">
-                            <span class="station-chip">2024</span>
-                            <span class="station-chip">internship</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card train-card">
-                <div class="station-content">
-                    <img class="station-logo dekalb-logo" src="assets/logos/dekalb-schools-light.png" alt="Dekalb County (ATL GA) Logo" loading="lazy" />
-                    <div class="station-text">
-                        <h3>IT Helpdesk Intern</h3>
-                        <p>Dekalb County School District (Spring 2024)</p>
-                        <div class="station-meta" aria-label="Experience details">
-                            <span class="station-chip">2024</span>
-                            <span class="station-chip">support</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card train-card">
-                <div class="station-content">
-                    <img class="station-logo" src="assets/logos/arabia-mountain.png" alt="Arabia Mountain High School Logo" loading="lazy" />
-                    <div class="station-text">
-                        <h3>CS Teaching Assistant</h3>
-                        <p>Arabia Mountain High School (Fall 2023-Spring 2024)</p>
-                        <div class="station-meta" aria-label="Experience details">
-                            <span class="station-chip">2023-2024</span>
-                            <span class="station-chip">teaching</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card train-card">
-                <div class="station-content">
-                    <img class="station-logo" src="assets/logos/gtri.png" alt="Georgia Tech Logo" loading="lazy" />
-                    <div class="station-text">
-                        <h3>Research Intern</h3>
-                        <p>SEAD, Georgia Tech Research Institute (Summer 2023)</p>
-                        <div class="station-meta" aria-label="Experience details">
-                            <span class="station-chip">2023</span>
-                            <span class="station-chip">research</span>
-                        </div>
+<section id="some-more" class="info-section">
+    <h2>some more about me</h2>
+
+    <div class="train-map-container">
+        <div class="card train-card">
+            <div class="station-content">
+                <img class="station-logo" src="/assets/logos/microsoft.png" alt="Microsoft Logo" loading="lazy" />
+                <div class="station-text">
+                    <h3>Microsoft SWE University Intern</h3>
+                    <p>OneDrive SharePoint (Summer 2026)</p>
+                    <div class="station-meta" aria-label="Experience details">
+                        <span class="station-chip">2026</span>
+                        <span class="station-chip">internship</span>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <section id="blog-peek" class="info-section">
-        <h2>hot takes (cold ones too)</h2>
-        <div class="blog-coming-soon">
-            <p>posts incoming. check back soon.</p>
-            <a href="/blog/"><i>view all takes</i></a>
-        </div>
-    </section>
-
-    <section id="projects" class="info-section">
-        <h2>projects</h2>
-
-        <div class="projects-container">
-            <div class="card project-card">
-                <img src="assets/serato-placeholder.png" alt="BreakPoint - automatic cue point detection" class="project-image" loading="lazy" />
-                <h3>BreakPoint</h3>
-                <p>automatic cue point detection for DJs. Analyze audio to find the perfect drop points for seamless mixing.</p>
-                <div class="project-links">
-                    <a href="https://github.com/LandBasedFighter/breakpoint" target="_blank" rel="noopener noreferrer">github</a>
+        <div class="card train-card">
+            <div class="station-content">
+                <img class="station-logo" src="/assets/logos/microsoft.png" alt="Microsoft Logo" loading="lazy" />
+                <div class="station-text">
+                    <h3>Microsoft Explore Intern</h3>
+                    <p>OneDrive SharePoint (Summer 2025)</p>
+                    <div class="station-meta" aria-label="Experience details">
+                        <span class="station-chip">2025</span>
+                        <span class="station-chip">internship</span>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+        <div class="card train-card">
+            <div class="station-content">
+                <img class="station-logo" src="/assets/logos/microsoft.png" alt="Microsoft Logo" loading="lazy" />
+                <div class="station-text">
+                    <h3>Microsoft Discovery Intern</h3>
+                    <p>Azure Core (Summer 2024)</p>
+                    <div class="station-meta" aria-label="Experience details">
+                        <span class="station-chip">2024</span>
+                        <span class="station-chip">internship</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card train-card">
+            <div class="station-content">
+                <img class="station-logo dekalb-logo" src="/assets/logos/dekalb-schools-light.png" alt="Dekalb County (ATL GA) Logo" loading="lazy" />
+                <div class="station-text">
+                    <h3>IT Helpdesk Intern</h3>
+                    <p>Dekalb County School District (Spring 2024)</p>
+                    <div class="station-meta" aria-label="Experience details">
+                        <span class="station-chip">2024</span>
+                        <span class="station-chip">support</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card train-card">
+            <div class="station-content">
+                <img class="station-logo" src="/assets/logos/arabia-mountain.png" alt="Arabia Mountain High School Logo" loading="lazy" />
+                <div class="station-text">
+                    <h3>CS Teaching Assistant</h3>
+                    <p>Arabia Mountain High School (Fall 2023-Spring 2024)</p>
+                    <div class="station-meta" aria-label="Experience details">
+                        <span class="station-chip">2023-2024</span>
+                        <span class="station-chip">teaching</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card train-card">
+            <div class="station-content">
+                <img class="station-logo" src="/assets/logos/gtri.png" alt="Georgia Tech Logo" loading="lazy" />
+                <div class="station-text">
+                    <h3>Research Intern</h3>
+                    <p>SEAD, Georgia Tech Research Institute (Summer 2023)</p>
+                    <div class="station-meta" aria-label="Experience details">
+                        <span class="station-chip">2023</span>
+                        <span class="station-chip">research</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="blog-peek" class="info-section">
+    <h2>hot takes (cold ones too)</h2>
+    
+    <div class="blog-peek-grid">
+        
+        <article class="blog-peek-card">
+            
+            <a class="blog-peek-card-media" href="/blog/tech-is-losing-young-americans/" aria-label="Read tech is losing young americans. how can they win them back?">
+                <img src="/assets/blog/tech-is-losing-young-americans/threshold_header.svg" alt="Abstract illustration of a fork in the road, with one smooth path and one fragmented path." loading="lazy" />
+            </a>
+            
+            <div class="blog-peek-card-text">
+                <time datetime="2026-07-07">July 7, 2026</time>
+                <h3><a href="/blog/tech-is-losing-young-americans/">tech is losing young americans. how can they win them back?</a></h3>
+                <p>A first post about Gen Z technopessimism, autonomous vehicles, AI backlash, and what tech companies need to do to earn trust back.</p>
+            </div>
+        </article>
+        
+    </div>
+    <div class="view-all-container">
+        <a href="/blog/"><i>view all takes</i></a>
+    </div>
+    
+</section>
+
+<section id="projects" class="info-section">
+    <h2>projects</h2>
+
+    <div class="projects-container">
+        <div class="card project-card">
+            <img src="/assets/serato-placeholder.png" alt="BreakPoint - automatic cue point detection" class="project-image" loading="lazy" />
+            <h3>BreakPoint</h3>
+            <p>automatic cue point detection for DJs. Analyze audio to find the perfect drop points for seamless mixing.</p>
+            <div class="project-links">
+                <a href="https://github.com/LandBasedFighter/breakpoint" target="_blank" rel="noopener noreferrer">github</a>
+            </div>
+        </div>
+    </div>
+</section>
+
 
     <footer>
         <div class="footer-content">
@@ -208,6 +231,6 @@
         </svg>
     </footer>
 
-    <script src="scripts.js"></script>
+    <script src="/scripts.js"></script>
 </body>
 </html>
