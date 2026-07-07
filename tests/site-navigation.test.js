@@ -38,3 +38,20 @@ test('homepage serves responsive optimized hero images', () => {
         assert.ok(fs.statSync(assetPath).size < maxBytes, `${fileName} should stay optimized`);
     });
 });
+
+test('robots.txt discourages crawlers from fetching the resume PDF', () => {
+    const robots = fs.readFileSync(path.join(__dirname, '..', 'src', 'robots.njk'), 'utf8');
+
+    assert.match(robots, /User-agent:\s*\*/);
+    assert.match(robots, /Disallow:\s*\/assets\/morgan-guinyard-resume\.pdf/);
+});
+
+test('homepage resume link discourages crawler discovery while staying accessible', () => {
+    const homepage = fs.readFileSync(path.join(__dirname, '..', 'src', 'index.njk'), 'utf8');
+    const staticHome = fs.readFileSync(path.join(__dirname, '..', 'index.html'), 'utf8');
+
+    assert.match(homepage, /href="\/assets\/morgan-guinyard-resume\.pdf"/);
+    assert.match(homepage, /rel="nofollow noopener noreferrer"/);
+    assert.match(staticHome, /href="assets\/morgan-guinyard-resume\.pdf"/);
+    assert.match(staticHome, /rel="nofollow"/);
+});
