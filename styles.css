@@ -771,7 +771,6 @@ footer {
 .blog-hero {
     background-color: var(--bg-secondary);
     padding: 60px var(--content-gutter);
-    border-bottom: 4px solid #ea0213;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
