@@ -47,6 +47,15 @@ test('first blog post media assets are copied into the passthrough assets tree',
     assert.ok(fs.existsSync(path.join(repoRoot, 'assets', 'blog', 'tech-is-losing-young-americans', 'waymovandalized.jpg')));
 });
 
+test('post hero svg background fills the full viewBox', () => {
+    const svg = read(path.join('assets', 'blog', 'tech-is-losing-young-americans', 'threshold_header.svg'));
+    const [, viewBoxWidth, viewBoxHeight] = svg.match(/viewBox="0 0 (\d+) (\d+)"/).map(Number);
+    const [, rectWidth, rectHeight] = svg.match(/<rect x="0" y="0" width="(\d+)" height="(\d+)"/).map(Number);
+
+    assert.equal(rectWidth, viewBoxWidth);
+    assert.equal(rectHeight, viewBoxHeight);
+});
+
 test('built site publishes the first post and surfaces it from blog entry points', () => {
     const postHtml = read(path.join('_site', 'blog', 'tech-is-losing-young-americans', 'index.html'));
     const blogHtml = read(path.join('_site', 'blog', 'index.html'));
