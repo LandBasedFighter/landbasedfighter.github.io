@@ -160,6 +160,14 @@ test('keeps the homepage hero out of scroll reveal animations', () => {
     assert.equal(observerInstances[0].observedItems.includes(sections[0]), false);
 });
 
+test('keeps the hero image unfiltered and hoverable through its frame', () => {
+    const css = fs.readFileSync(path.join(__dirname, '..', 'styles.css'), 'utf8');
+
+    assert.doesNotMatch(css, /\.hero-image\s+img\s*\{[^}]*filter\s*:/s);
+    assert.match(css, /\.hero-image:hover\s+img\s*\{[^}]*transform\s*:/s);
+    assert.match(css, /\.hero-image::before\s*\{[^}]*pointer-events:\s*none\s*;/s);
+});
+
 test('renders footer name in lowercase', () => {
     const { footerCopy } = runSiteScript();
 
