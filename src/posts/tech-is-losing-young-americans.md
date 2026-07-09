@@ -8,7 +8,7 @@ heroImageAlt: "Abstract illustration of a fork in the road, with one smooth path
 heroImageCaption: "A fork in the road for the technology industry."
 ---
 
-Earlier last year, Waymo collaborated with Uber to bring their highly anticipated driverless taxi service to Atlanta. I was initially skeptical about how Waymos would interact with the peculiar style of driving that plagues our city, but after a few trips in one, I'm bullish on Waymo. Every time I see one, I'm briefly filled with the hope that the future The Jetsons promised to us is within reach. But many Americans my age seem to think it's a sign of our impending dystopian hellscape, and it's not hard to see what's driving their skepticism.
+Earlier last year, Waymo collaborated with Uber to bring their highly anticipated driverless taxi service to Atlanta. I was initially skeptical about how Waymos would interact with the peculiar style of driving that plagues our city, but after a few trips in one, I'm bullish on Waymo. Every time I see one, I'm briefly filled with the hope that the future *The Jetsons* promised to us is within reach. But many Americans my age seem to think it's a sign of our impending dystopian hellscape, and it's not hard to see what's driving their skepticism.
 
 Case in point: a few months ago, [a Waymo in San Francisco struck and killed a beloved bodega cat named KitKat](https://www.theguardian.com/us-news/2025/nov/05/san-francisco-waymo-kitkat-cat-death). My TikTok feed was filled to the brim with tributes to KitKat, under which comments seethe about [clankers](https://en.wikipedia.org/wiki/Clanker) and promising retribution against the autonomous vehicles. [One video](https://www.tiktok.com/t/ZP8DDpKjD/) captioned 'Waymo revenge for what they did to bodega cat 🕊️' shows a teen dancing on top of a graffiti-ed out Waymo. (though this is probably related to the chaos that engulfed LA streets after the Dodgers World Series win).
 
@@ -35,7 +35,7 @@ Something has to give.
 
 ## Read The Room
 
-The first fix is simple. Tech bros, for the love of God, [stop permanent underclass posting](https://www.nytimes.com/2026/04/30/opinion/ai-labor-work-force-silicon-valley.html). Yes, this includes TPOT shitposters and [C-suite executives gloating in commencement speeches and press interviews](https://www.nbcnews.com/tech/tech-news/artificial-intelligence-students-pushback-commencement-booing-rcna345731). Young Americans do not like watching their employment, agency, and future treated as a punchline. It's beyond bad optics. It's frankly anti-social. No amount of EA embellishing and productivity-slop will cover up the fact that your vision for the post-AI economy, joking or not, is borderline slavery. The alternative?
+The first fix is simple. Tech bros, for the love of God, [stop permanent underclass posting](https://www.nytimes.com/2026/04/30/opinion/ai-labor-work-force-silicon-valley.html). Yes, this includes TPOT and [C-suite executives gloating in commencement speeches and press interviews](https://www.nbcnews.com/tech/tech-news/artificial-intelligence-students-pushback-commencement-booing-rcna345731). Young Americans do not like watching their employment, agency, and future treated as a punchline. It's beyond bad optics. It's frankly anti-social. No amount of EA embellishing and productivity-slop will cover up the fact that your vision for the post-AI economy, joking or not, is borderline slavery. The alternative?
 
 ## Put Up
 
