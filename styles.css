@@ -650,25 +650,7 @@ section {
     width: 100%;
 }
 
-.station-meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 10px;
-}
 
-.station-chip {
-    border: 1px solid rgba(0, 146, 208, 0.28);
-    border-radius: 999px;
-    color: var(--text-secondary);
-    background: rgba(0, 146, 208, 0.08);
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.03em;
-    line-height: 1;
-    padding: 6px 10px;
-    text-transform: uppercase;
-}
 
 .station-logo {
     width: 60px;
@@ -1012,15 +994,7 @@ button:focus-visible {
         gap: 12px;
     }
 
-    .station-meta {
-        gap: 6px;
-        margin-top: 8px;
-    }
 
-    .station-chip {
-        font-size: 0.68rem;
-        padding: 5px 8px;
-    }
 
     .post-body-figure--narrow {
         width: 100%;
