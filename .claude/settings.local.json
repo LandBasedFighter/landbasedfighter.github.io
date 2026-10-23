@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(where node:*)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(npm run *)"
     ]
   }
 }

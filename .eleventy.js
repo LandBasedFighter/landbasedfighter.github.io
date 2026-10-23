@@ -26,6 +26,9 @@ module.exports = function (eleventyConfig) {
 
     eleventyConfig.addFilter("limit", (arr, limit) => arr.slice(0, limit));
 
+    // Current year for the footer, set at build time
+    eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
+
     return {
         dir: {
             input: "src",
